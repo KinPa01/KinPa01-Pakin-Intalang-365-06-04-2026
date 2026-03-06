@@ -37,7 +37,7 @@ export default defineConfig((ctx) => {
     // Full list of options: https://v2.quasar.dev/quasar-cli-webpack/quasar-config-file#build
     build: {
       env: {
-        API_URL: process.env.API_URL
+        API_URL: process.env.API_URL || 'https://kinpa01-pakin-intalang-365-06-04-2026-2.onrender.com/api'
       },
       // publicPath: '/',
       vueRouterMode: 'hash', // available values: 'hash', 'history'
