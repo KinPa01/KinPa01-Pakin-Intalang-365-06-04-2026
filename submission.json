@@ -2,8 +2,8 @@
     "student_id": "6604101365",
     "name": "นายภาคิน อินแถลง",
     "github_repo": "https://github.com/KinPa01/KinPa01-Pakin-Intalang-365-06-04-2026",
-    "backend_base_url": "https://dashboard.render.com/web/srv-d6l7o0tm5p6s7397vfgg/deploys/dep-d6l7o1dm5p6s7397vg00?r=2026-03-06%4007%3A01%3A29%7E2026-03-06%4007%3A08%3A25",
-    "frontend_url": "https://pakin365.netlify.app/",
+    "backend_base_url": "https://kinpa01-pakin-intalang-365-06-04-2026-2.onrender.com",
+    "frontend_url": "https://pakin365.netlify.app",
     "api": {
         "health": "https://kinpa01-pakin-intalang-365-06-04-2026-2.onrender.com/api/health",
         "tasks": "https://kinpa01-pakin-intalang-365-06-04-2026-2.onrender.com/api/tasks"
