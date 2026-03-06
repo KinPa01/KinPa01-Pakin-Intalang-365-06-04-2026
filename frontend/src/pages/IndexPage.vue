@@ -20,7 +20,7 @@
 
     <div v-else>
       <div v-if="tasks.length === 0" class="text-grey">
-        ยังไม่มีงานในระบบ ลองสร้างด้วย curl / Postman ก่อน
+        ยังไม่มีงานในระบบ ลองสร้างด้วย curl / Postman ก่อนนะ
       </div>
 
       <q-list v-else bordered separator>
