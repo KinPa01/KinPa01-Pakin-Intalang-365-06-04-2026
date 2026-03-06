@@ -1,0 +1,11 @@
+{
+    "student_id": "6604101365",
+    "name": "นายภาคิน อินแถลง",
+    "github_repo": "https://github.com/KinPa01/KinPa01-Pakin-Intalang-365-06-04-2026",
+    "backend_base_url": "https://REPLACE_WITH_RENDER_URL.onrender.com",
+    "frontend_url": "https://REPLACE_WITH_NETLIFY_URL.netlify.app",
+    "api": {
+        "health": "https://REPLACE_WITH_RENDER_URL.onrender.com/api/health",
+        "tasks": "https://REPLACE_WITH_RENDER_URL.onrender.com/api/tasks"
+    }
+}

@@ -1,0 +1,26 @@
+version: '3.9'
+
+# Staging environment overrides
+# Usage: docker-compose -f docker-compose.yml -f docker-compose.staging.yml up -d
+
+services:
+  nginx:
+    ports:
+      - "8080:80" # Different port for staging
+      - "8443:443"
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 256M
+    environment:
+      - ENVIRONMENT=staging
+
+  backend:
+    deploy:
+      resources:
+        limits:
+          cpus: '0.75'
+          memory: 384M
+    environment:
+      - NODE_ENV=staging
