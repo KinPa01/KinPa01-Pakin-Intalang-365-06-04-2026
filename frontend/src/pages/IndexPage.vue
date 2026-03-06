@@ -42,10 +42,8 @@
 
 <script setup>
 import { ref, onMounted } from 'vue';
-import axios from 'axios';
-
-// อ่านค่าจาก quasar.config → env.API_URL
-const API_URL = process.env.API_URL || 'http://localhost:3000';
+// นำเข้า api ที่ตั้งค่า baseURL: '/api' ไว้แล้วจากไฟล์ boot/axios.js
+import { api } from 'boot/axios'; 
 
 const tasks = ref([]);
 const loading = ref(false);
@@ -56,15 +54,22 @@ const fetchTasks = async () => {
   errorMessage.value = '';
 
   try {
-    const res = await axios.get(API_URL + '/api/tasks');
-    tasks.value = res.data.data; // backend ส่ง { data: [...] }
+    // เรียกไปที่ /tasks (ซึ่งจะกลายเป็น /api/tasks อัตโนมัติผ่าน axios instance)
+    const res = await api.get('/tasks');
+    
+    // ตรวจสอบโครงสร้างข้อมูลที่ Backend ส่งมา 
+    // ถ้าส่งมาในรูปแบบ { data: [...] } ให้ใช้ res.data.data
+    tasks.value = res.data.data || res.data; 
+    
+    console.log('Successfully loaded tasks:', tasks.value);
   } catch (err) {
-    console.error('API /api/tasks error:', err);
+    console.error('API Error:', err);
     errorMessage.value = 'โหลดงานจากฐานข้อมูลไม่สำเร็จ';
   } finally {
     loading.value = false;
   }
 };
 
+// เรียกดึงข้อมูลทันทีที่หน้าจอโหลดเสร็จ
 onMounted(fetchTasks);
 </script>
